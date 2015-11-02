@@ -1,0 +1,54 @@
+<!-- BioSamples XML API - version 1.0 -->
+<BioSampleGroup
+	xsi:schemaLocation="http://www.ebi.ac.uk/biosamples/SampleGroupExport/1.0 http://www.ebi.ac.uk/biosamples/assets/xsd/v1.0/BioSDSchema.xsd"
+	id="SAMEG306372" xmlns="http://www.ebi.ac.uk/biosamples/SampleGroupExport/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Property class="Submission Release Date" characteristic="false"
+		comment="false" type="DATETIME">
+		<QualifiedValue>
+			<Value>2013-09-09T23:00:00+00:00</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Submission Update Date" characteristic="false"
+		comment="false" type="DATETIME">
+		<QualifiedValue>
+			<Value>2015-10-30T13:13:00+00:00</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Submission Identifier" characteristic="false"
+		comment="false" type="STRING">
+		<QualifiedValue>
+			<Value>GSB-32</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Submission Title" characteristic="false"
+		comment="false" type="STRING">
+		<QualifiedValue>
+			<Value>Test samples</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Submission Description" characteristic="false"
+		comment="false" type="STRING">
+		<QualifiedValue>
+			<Value>These are samples to test integration across EBI resources</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Submission Reference Layer" characteristic="false"
+		comment="false" type="STRING">
+		<QualifiedValue>
+			<Value>false</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Group Name" characteristic="true" comment="false"
+		type="STRING">
+		<QualifiedValue>
+			<Value>Other Group</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="SampleTab FTP location" characteristic="false"
+		comment="true" type="STRING">
+		<QualifiedValue>
+			<Value>ftp://ftp.ebi.ac.uk/pub/databases/biosamples/GSB/GSB-32/sampletab.txt</Value>
+		</QualifiedValue>
+	</Property>
+</BioSampleGroup>

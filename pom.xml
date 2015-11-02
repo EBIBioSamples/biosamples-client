@@ -21,6 +21,11 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 		</dependency>
+		<!-- Needed for xml mapping -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+		</dependency>
 		<!-- Pull test framework stuff in -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,6 +45,10 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+	        <plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	        </plugin>
 	    </plugins>
 	</build>
 </project>

@@ -1,0 +1,42 @@
+<!-- BioSamples XML API - version 1.0 -->
+<BioSample submissionReleaseDate="2013-09-09T23:00:00+00:00"
+	submissionUpdateDate="2015-10-30T13:13:00+00:00"
+	xsi:schemaLocation="http://www.ebi.ac.uk/biosamples/SampleGroupExport/1.0 http://www.ebi.ac.uk/biosamples/assets/xsd/v1.0/BioSDSchema.xsd"
+	id="SAMEA2186845" xmlns="http://www.ebi.ac.uk/biosamples/SampleGroupExport/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Property class="Sample Name" characteristic="true" comment="false"
+		type="STRING">
+		<QualifiedValue>
+			<Value>Test 1</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Sample Description" characteristic="true"
+		comment="false" type="STRING">
+		<QualifiedValue>
+			<Value>Dummy test sample number 1</Value>
+		</QualifiedValue>
+	</Property>
+	<Property class="Organism" characteristic="false" comment="false"
+		type="STRING">
+		<QualifiedValue>
+			<Value>Homo sapiens</Value>
+			<TermSourceREF>
+				<Name>NCBI Taxonomy</Name>
+				<Description />
+				<URI>http://www.ncbi.nlm.nih.gov/taxonomy</URI>
+				<Version />
+				<TermSourceID>9606</TermSourceID>
+			</TermSourceREF>
+		</QualifiedValue>
+	</Property>
+	<Database>
+		<Name>DB</Name>
+		<ID>test2</ID>
+		<URI>http://www.ebi.ac.uk/biosamples/sample/SAMEA2186844</URI>
+	</Database>
+	<Database>
+		<Name>DB</Name>
+		<ID>test1</ID>
+		<URI>http://www.ebi.ac.uk/biosamples/sample/SAMEA2186845</URI>
+	</Database>
+</BioSample>
