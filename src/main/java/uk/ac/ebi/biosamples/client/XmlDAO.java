@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
@@ -51,21 +50,6 @@ public class XmlDAO {
 		setWriteRestTemplate(new RestTemplate());
 	}
 	
-	private class CustomXMLInterceptor implements ClientHttpRequestInterceptor {
-
-		@Override
-		public ClientHttpResponse intercept(HttpRequest request, byte[] body,
-				ClientHttpRequestExecution execution) throws IOException {
-			ClientHttpResponse response = execution.execute(request, body);
-			if (response.getHeaders().getContentType().equals(XMLV1MEDIA)) {
-				response.getHeaders().setContentType(MediaType.TEXT_XML);
-			}
-			return response;
-		}
-		
-	}
-
-	
 	public BioSampleType getBioSample(String accession) throws RestClientException {
 		if (!accession.matches("SAM[END]A?[0-9]+")) {
 			throw new IllegalArgumentException("Accession must be a valid biosample accession");
@@ -102,7 +86,18 @@ public class XmlDAO {
 		//because the read API has a weird content-type header of text/xml_v1.0
 		//use an intercepter to convert that to regular text/xml
 		List<ClientHttpRequestInterceptor> interceptors = readRestTemplate.getInterceptors();
-		interceptors.add(new CustomXMLInterceptor());
+		interceptors.add(new ClientHttpRequestInterceptor() {
+			@Override
+			public ClientHttpResponse intercept(HttpRequest request, byte[] body,
+					ClientHttpRequestExecution execution) throws IOException {
+				ClientHttpResponse response = execution.execute(request, body);
+				if (response.getHeaders().getContentType().equals(XMLV1MEDIA)) {
+					response.getHeaders().setContentType(MediaType.TEXT_XML);
+				}
+				return response;
+			}
+			
+		});
 		readRestTemplate.setInterceptors(interceptors);
 		
 		this.readRestTemplate = readRestTemplate;
