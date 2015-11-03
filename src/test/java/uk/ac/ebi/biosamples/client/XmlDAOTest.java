@@ -18,7 +18,7 @@ import org.junit.Test;
 import uk.ac.ebi.biosamples.jaxb.samplegroupexport.BioSampleGroupType;
 import uk.ac.ebi.biosamples.jaxb.samplegroupexport.BioSampleType;
 
-public class XmlDAOtest {
+public class XmlDAOTest {
 
 	private RestTemplate readRestTemplate;
 	private MockRestServiceServer readMockServer;
